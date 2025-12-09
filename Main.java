@@ -8,8 +8,8 @@ public class Main {
         String accountNumber = input.nextLine();
         BankAccount s = new BankAccount(accountNumber, ownerName, balance);
         double amount = input.nextDouble();
-        s.withdraw(amount);
         s.deposit(amount);
+        s.withdraw(amount);
         s.printBalance();
     }
 }
