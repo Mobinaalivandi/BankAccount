@@ -24,18 +24,21 @@ public class BankAccount {
     public void setownerName(String ownerName) {
         this.ownerName = ownerName;
     }
+    double sum = 0;
     public void deposit(double amount) {
-        balance = amount + balance;
-        System.out.println(balance);
+        sum = amount + balance;
+        System.out.println(sum);
     }
+    double subtract = 0;
     public void withdraw(double amount) {
         if (balance >= amount) {
-            balance = balance - amount;
-            System.out.println(balance);
+            subtract = balance - amount;
+            System.out.println(subtract);
         }
     }
     public void printBalance() {
         System.out.println(balance);
     }
 }
+
 
