@@ -27,18 +27,24 @@ public class BankAccount {
     double sum = 0;
     public void deposit(double amount) {
         sum = amount + balance;
-        System.out.println(sum);
+             System.out.println(" deposit amount is : " + sum);
+        } else {
+            System.out.println("this amount is not acceptable");
+        }
     }
     double subtract = 0;
     public void withdraw(double amount) {
         if (balance >= amount) {
             subtract = balance - amount;
-            System.out.println(subtract);
+                System.out.println("withdrawal amount is : " + subtract);
+        } else {
+            System.out.println("balance is not enough");
         }
     }
     public void printBalance() {
-        System.out.println(balance);
+        System.out.println("current balance is : " + balance);
     }
 }
+
 
 
