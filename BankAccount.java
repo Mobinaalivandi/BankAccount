@@ -26,6 +26,7 @@ public class BankAccount {
     }
     double sum = 0;
     public void deposit(double amount) {
+        if ( amount > 0 ) {
         sum = amount + balance;
              System.out.println(" deposit amount is : " + sum);
         } else {
@@ -45,6 +46,7 @@ public class BankAccount {
         System.out.println("current balance is : " + balance);
     }
 }
+
 
 
 
