@@ -8,6 +8,8 @@ public class Main {
         BankAccount su = new BankAccount();
         int x = input.nextInt();
         int[] id = new int[x];
+        for ( int j = 0 ; j < x ; ++j) {
+            id[j] = ran.nextInt(899999) + 1000000; }
         BankAccount[] list = new BankAccount[x];
         for (int i = 0; i < x; ++i) {
             String ownerName = input.next();
