@@ -14,7 +14,7 @@ public class Main {
         for (int i = 0; i < x; ++i) {
             String ownerName = input.next();
             int accountNumber = ran.nextInt(899999) + 1000000;
-            for (int k = 0; k < i; ++k) {
+            for (int k = 0; k < x ; ++k) {
                 if (accountNumber == id[k]) {
                     accountNumber = ran.nextInt(899999) + 1000000;
                 }
