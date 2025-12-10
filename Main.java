@@ -9,9 +9,6 @@ public class Main {
         int x = input.nextInt();
         int[] id = new int[x];
         BankAccount[] list = new BankAccount[x];
-        for (int j = 0; j < x; ++j) {
-            id[j] = ran.nextInt(899999) + 1000000;
-        }
         for (int i = 0; i < x; ++i) {
             String ownerName = input.next();
             int accountNumber = ran.nextInt(899999) + 1000000;
