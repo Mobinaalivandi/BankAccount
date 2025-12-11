@@ -1,14 +1,13 @@
 public class BankAccount {
     private int accountNumber;
     private  String ownerName;
-    private int balance;
-    BankAccount(int accountNumber, String ownerName, int balance) {
+    private double balance;
+    private double amount;
+    BankAccount(int accountNumber, String ownerName, double balance , double amount) {
         this.accountNumber = accountNumber;
         this.ownerName = ownerName;
-        this.balance = 0 ;
-    }
-    public BankAccount() {
-
+        this.balance = balance ;
+        this.amount = amount;
     }
     public String getownerName() {
         return ownerName;
@@ -19,7 +18,7 @@ public class BankAccount {
         return accountNumber;
     }
 
-    public int getbalance() {
+    public double getbalance() {
 
         return balance;
     }
@@ -28,20 +27,21 @@ public class BankAccount {
 
         this.ownerName = ownerName;
     }
-    double sum = 0;
+    public double getamount() {
+        return amount;
+    }
     public void deposit(double amount) {
         if (amount > 0) {
-            sum = balance + amount;
-            System.out.println(" deposit amount is : " + sum);
+            balance = balance + amount;
+            System.out.println(" deposit amount is : " + balance);
         } else {
             System.out.println("this amount is not acceptable");
         }
     }
-    double subtract = 0;
     public void withdraw(double amount) {
         if (balance >= amount && amount > 0) {
-            subtract = balance - amount;
-            System.out.println("withdrawal amount is : " + subtract);
+            balance = balance - amount;
+            System.out.println("withdrawal amount is : " + balance);
         } else {
             System.out.println("balance is not enough");
         }
@@ -51,7 +51,6 @@ public class BankAccount {
         System.out.println("current balance is : " + balance);
     }
 }
-
 
 
 
