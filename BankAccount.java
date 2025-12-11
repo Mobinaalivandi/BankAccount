@@ -3,30 +3,22 @@ public class BankAccount {
     private  String ownerName;
     private double balance;
     private double amount;
-    BankAccount(int accountNumber, String ownerName, double balance , double amount) {
+    BankAccount(int accountNumber, String ownerName, double balance) {
         this.accountNumber = accountNumber;
         this.ownerName = ownerName;
         this.balance = balance ;
-        this.amount = amount;
+
     }
+
     public String getownerName() {
         return ownerName;
     }
 
-    public int getaccountNumber() {
+    public int getaccountNumber() { return accountNumber; }
 
-        return accountNumber;
-    }
+    public double getbalance() { return balance;}
 
-    public double getbalance() {
-
-        return balance;
-    }
-
-    public void setownerName(String ownerName) {
-
-        this.ownerName = ownerName;
-    }
+    public void setownerName(String ownerName) { this.ownerName = ownerName;}
     public double getamount() {
         return amount;
     }
@@ -51,6 +43,8 @@ public class BankAccount {
         System.out.println("current balance is : " + balance);
     }
 }
+
+
 
 
 
