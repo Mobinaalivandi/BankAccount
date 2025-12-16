@@ -14,9 +14,8 @@ public class Main {
         int count = 0 ;
         while (count < 6) {
             String attempt = input.nextLine();
-            attempt = attempt.toLowerCase();
-            int length = attempt.length();
-            if (length != 5) {
+            attempt = attempt.trim().toLowerCase();
+            if (!(attempt.matches("[a-zA-Z]{5}"))) {
                 System.out.println("This name is not acceptable , enter new one");
             } else {
                 ++count;
@@ -31,25 +30,42 @@ public class Main {
                 }
                 String guess = "";
                 for (int i = 0; i < 5; ++i) {
-                    boolean find = false;
                     char att = attempt.charAt(i);
-                    for (int k = 0; k < check.size(); ++k) {
-                        if ( att == check.get(k)) {
-                            if ( k==i) {
-                                guess = guess + "o";
-                            } else {
-                                guess = guess + "w";
-                            }
-                            check.remove(k);
-                            find = true;
-                            break;
+                    if (att == check.get(i)) {
+                            guess = guess + "o";
+                            check.set(i , '$');
+                        } else {
+                            guess = guess + "*";
                         }
                     }
-                    if (!find) {
-                        guess = guess + "x";
+                    for (int k = check.size() - 1 ; k >= 0 ; --k) {
+                        if (check.get(k) == '$') {
+                            check.remove(k);
+                        }
                     }
+                    String fin = "";
+                    for ( int i = 0 ; i < 5 ; ++i) {
+                       char att = attempt.charAt(i);
+                       if ( guess.charAt(i) == '*') {
+                        boolean find = false;
+                        for (int j = 0; j < check.size(); ++j) {
+                            if (att == check.get(j)) {
+                                find = true;
+                                check.remove(j);
+                                break;
+                            }
+                        }
+                        if (find) {
+                            fin = fin + 'w';
+                        } else {
+                            fin = fin + 'x';
+                        }
+                    }
+                       if (guess.charAt(i) == 'o') {
+                           fin = fin + 'o';
+                       }
                 }
-                System.out.println(guess);
+                System.out.println(fin);
             }
             if (count == 6) {
                 if (!(attempt.equals(randomword))) {
@@ -58,6 +74,10 @@ public class Main {
             }
         }
     }
+}
+
+
+
 }
 
 
