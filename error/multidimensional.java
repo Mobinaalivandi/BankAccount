@@ -10,7 +10,7 @@ public class multidimensional {
         double average = 0;
         double sum = 0;
         for (int i = 0; i < g.length; ++i) {
-            sum = g[i] + sum;
+            sum = array[i].g[i] + sum;
         }
         average = sum / g.length;
             System.out.println( " " + "'s average score is : " + " " + average);
@@ -19,7 +19,7 @@ public class multidimensional {
         double average = 0;
         double sum = 0;
         for (int i = 0; i < g.length; ++i) {
-            sum = g[i] + sum;
+            sum = array[i].g[i] + sum;
         }
         average = sum / g.length;
             if (average > 15) {
@@ -44,6 +44,7 @@ public class multidimensional {
         System.out.println( maxx + " " + "has the highest average score with : " + " " + max);
     }
 }
+
 
 
 
